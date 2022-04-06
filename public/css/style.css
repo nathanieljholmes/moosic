@@ -1,0 +1,525 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+  --black: #202020;
+  --darkgray: #707070;
+  --yellow: #f3c002;
+  --paleyellow:#ffe584;
+  --orange:#ff7b1b;
+  --red:#BD0303;
+  --darkred:#780000;
+  --white: #fff;
+  --font-size: 1.3rem;
+  --mono: "PT Mono", monospace;
+  --sans: "PT Sans Narrow", sans-serif;
+  --cursive: "Rye", cursive;
+  --margin: 2rem;
+}
+
+/* Resets*/
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* generic styles for the page */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--sans);
+  background-color: var(--black);
+  color: var(--white);
+  font-size: var(--font-size);
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+header {
+  margin: auto;
+  background-color: var(--yellow);
+}
+img {
+  display: block;
+	width: 100%;
+
+}
+a:hover{
+  color: var(--red);
+}
+h1{
+  color: var(--yellow);
+  text-transform: uppercase;
+  font-size: 6rem;
+  line-height: 6rem;
+}
+h2{
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+h3{
+  font-size: 2.25rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+textarea{
+  resize: none;
+}
+/* Color Theme Wrappers */
+.section-darkred {
+  background-color: var(--darkred);
+}
+.section-yellow {
+  background-color: var(--yellow);
+}
+
+/* Flex Wrapper classes */
+.row {
+  display: flex;
+  flex-flow:row wrap ;
+}
+.column {
+  display: flex;
+  flex-flow:column wrap ;
+}
+/* Navigation Section */
+nav {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--black);
+  padding: 1rem 4rem;
+}
+nav a {
+  color: var(--black);
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+nav h3 {
+  font-weight: 300;
+  font-family: var(--cursive);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+@media (min-width: 850px) {
+  nav {
+    max-width: 1680px;
+    margin: auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+  nav ul {
+    gap: 4rem;
+    justify-content: center;
+  }
+}
+
+
+/* Hero Section */
+#hero {
+  background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../img/D917F539-227A-4F45-BC05-DAC01072789A.JPEG");
+  background-size: cover;
+  background-position: bottom;
+  height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+#hero h1{
+  font-family: var(--cursive);
+  font-weight: 400;
+  font-size: 5.5rem;
+  line-height: 10rem;
+  color: var(--yellow);
+}
+
+
+/* Music Section */
+#music {
+  margin: 0;
+  padding: 2rem 3.5rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+#music > div:first-child{
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  flex-basis: 100%;
+}
+
+#music > div:last-child{
+  display: flex;
+  align-items: center;
+  flex-flow: column  wrap;
+  flex-basis: 100%;
+  margin: 0 auto;
+}
+
+#music h2 span {
+  font-family: var(--cursive);
+  font-weight: 400;
+  color: var(--yellow);
+}
+#player-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#player-controls {
+  padding-top: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#player-buttons {
+  margin: 0 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#player-buttons button {
+  margin-top: 1rem;
+  height: 1.5rem;
+  border: 0 solid var(--black);
+  border-radius: 0.5rem;
+  font-family: var(--mono);
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#player-buttons button:hover {
+  background-color: var(--paleyellow);
+}
+#player-buttons button:active {
+  background-color: var(--orange);
+}
+#player-progress {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  height: 0.75rem;
+  min-width: 12rem;
+  width: 100%;
+  background-color: var(--white);
+  overflow: hidden;
+  
+}
+#player-bar {
+  height: 1.5rem;
+  background-color: var(--yellow);
+  width: 0;
+  transition: all 0.12s ease-in;
+  
+}
+#time-progress {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-family: var(--mono);
+  padding: 0 0.5rem;
+}
+#time-progress p {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  color: var(--yellow);
+}
+
+
+@media (min-width: 850px) {
+  #music {
+    margin: 0 auto;
+    flex-flow: row wrap;
+    align-items: flex-start;
+  }
+  #music > div:first-child{
+    display: flex;
+    flex-flow: column wrap;
+    text-align: left;
+    max-width: 24%;
+    flex-grow: 2;
+    margin-right: 4rem;
+  }
+}
+@media (min-width: 1160px) {
+  #music {
+    max-width: 1680px;
+    justify-content: space-between;
+  }
+  #music > div:last-child{
+    flex-basis: auto;
+    flex-grow: 1;
+    max-width:36%;
+  }
+  #player-container {
+    background:linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('../img/701F3272-7E17-42B3-8AC7-829DE14AF2F7.JPEG');
+    height: 22rem;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 27px 100px rgba(0, 0, 0, 0.4), 0px 5.4px 16.25px rgba(0, 0, 0, 0.2);
+
+  }
+}
+
+/* Playlist Section */
+#playlist-container{
+  background-color: var(--black);
+  list-style-type: none;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0px 27px 100px rgba(0, 0, 0, 0.4), 0px 5.4px 16.25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-width: 18.75rem;
+}
+#playlist {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem;
+  flex-grow: 1;
+}
+
+#playlist li a {
+  text-decoration: none;
+  color: var(--yellow);
+}
+#playlist li a:hover {
+
+  color: var(--paleyellow);
+}
+#playlist .active-sample{
+  color: var(--white);
+}
+#total-songs {
+  font-size: 1rem;
+  margin: 0;
+}
+
+
+@media (min-width: 850px) {
+  #playlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem;
+    text-align: left;
+  }
+}
+
+/* Tours Section */
+#tours{
+  padding: 2rem 3.5rem;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap:3rem;
+}
+
+.card{
+  background-color: var(--white);
+  padding-bottom: 6rem;
+  flex:1 0 15%;
+  border-radius: 8px;
+  box-shadow: 0px 27px 100px rgba(0, 0, 0, 0.4), 0px 5.4px 16.25px rgba(0, 0, 0, 0.2);
+}
+.card div {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 0 0.5rem;
+  margin-top: -4rem;
+  gap: 2rem;
+  color: var(--yellow);
+
+}
+.card h2 {
+  padding: 2rem;
+  text-align: center;
+  color: var(--black);
+}
+.card img {
+  max-width: 100%;
+  max-height: 20rem;
+  border-radius: 8px 8px 0px 0px;
+  object-fit: cover;
+
+}
+@media (min-width: 850px) {
+  #tours{
+    margin: 0 auto;
+    max-width: 1680px;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    text-align: left;
+  }
+  #tours div:first-child{
+    max-width: 24%;
+    margin-right: 2rem;
+  }
+  .card div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}
+
+/* FeedBack Section */
+#feedback {
+  display: flex ;
+  text-align: center;
+  justify-content: space-between;
+  height: 27.5rem;
+  gap: 4rem;
+}
+
+#feedback form{
+  display: flex ;
+  flex-flow: column wrap;
+  text-align: left;
+  gap: 2rem;
+  width: 36%;
+}
+#feedback form > div{
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+#feedback input{
+  font-family: var(--sans);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  height: 3rem;
+  width: 100%;
+}
+#feedback textarea{
+  font-family: var(--sans);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  height:6rem;
+}
+#feedback button{
+  background-color: var(--yellow);
+  border-radius: 8px;
+  border: none;
+  height: 2.5rem;
+  width: 8rem;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  cursor: pointer;
+}
+#feedback button:hover{
+  background-color: var(--paleyellow);
+}
+#feedback button:focus{
+  background-color: var(--orange);
+}
+@media (min-width: 850px) {
+  #feedback{
+    padding: 2rem 3.5rem;
+    text-align: left;  
+    margin: 0 auto;
+    max-width: 1680px;
+    flex-flow: row wrap;
+    align-items: flex-start;
+
+  }
+}
+/* Footer Section */
+footer {
+  height: 12rem;
+  background-color: var(--yellow);
+  font-family: var(--sans);
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--black);
+  padding: 1rem 4rem;
+}
+footer a {
+  color: var(--black);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer h3 {
+  font-weight: 300;
+  font-family: var(--cursive);
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+footer li:first-child {
+  flex-basis: 30%;
+  text-align: center;
+}
+footer li:last-child {
+  flex-basis:30%;
+  text-align: right;
+}
+@media (min-width: 850px) {
+  footer {
+    max-width: 1680px;
+    margin: auto;
+  }
+  footer li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+  footer ul {
+    gap: 4rem;
+    justify-content: center;
+  }
+}

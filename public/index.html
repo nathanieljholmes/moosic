@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moosic</title>
+    <link rel="icon" type="image/bull-icon" href="img/favicon.ico" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans+Narrow&family=Rye&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <h3><a href="index.html">MOOSIC</a></h3>
+          </li>
+          <li><a href="#tours">Tours</a></li>
+          <li><a href="#music">Listen</a></li>
+          <li><a href="#feedback">Feedback</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="hero">
+      <h1>MOOSIC</h1>
+    </section>
+    <div class="section-darkred">
+      <section id="music">
+        <div>
+          <h1>listen</h1>
+          <h2>Get a taste of our newest <span>MOOSIC!</span></h2>
+        </div>
+        <div id="playlist-container">
+          <audio id="player" src="" preload="metadata"></audio>
+          <h3>I'm Really Confused</h3>
+          <p id="total-songs"></p>
+          <ul id="playlist">
+            <li>
+              <a class="active-sample" href="..\audio\sample1.m4a"
+                >You don't really love me</a
+              >
+            </li>
+            <li><a href="..\audio\sample2.m4a">So done with you</a></li>
+            <li>
+              <a href="..\audio\sample3.m4a">I actually still love you</a>
+            </li>
+            <li><a href="..\audio\sample4.m4a">Call me back please</a></li>
+            <li><a href="..\audio\sample5.m4a">Bye baby bye</a></li>
+            <li><a href="..\audio\sample6.m4a">We together</a></li>
+            <li><a href="..\audio\sample7.m4a">Together Forever</a></li>
+          </ul>
+        </div>
+        <div>
+          <div id="player-container">
+            <div id="player-controls">
+              <div id="time-progress">
+                <p>0:00</p>
+                <p>0:00</p>
+              </div>
+              <div id="player-progress">
+                <div id="player-bar"></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="player-buttons">
+            <button id="previous">Previous</button>
+            <button id="play">Play</button>
+            <button id="pause">Pause</button>
+            <button id="stop">Stop</button>
+            <button id="next">Next</button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section id="tours">
+      <div>
+        <h1>Tours</h1>
+        <h3>See our upcoming live events!</h3>
+      </div>
+      <article class="card">
+        <img src="img\moosic-tour-1.jpg" alt="" srcset="" />
+        <div>
+          <h3>Surprise, AZ</h3>
+          <h4>4/20/22</h4>
+        </div>
+        <h2>Fundraiser Event</h2>
+      </article>
+      <article class="card">
+        <img src="img\moosic-tour-2.jpg" alt="" srcset="" />
+        <div>
+          <h3>Scottsdale, AZ</h3>
+          <h4>5/7/22</h4>
+        </div>
+        <h2>MOOSIC Festival</h2>
+      </article>
+      <article class="card">
+        <img src="img\moosic-tour-3.jpg" alt="" srcset="" />
+        <div>
+          <h3>Tuscon, AZ</h3>
+          <h4>7/8/22</h4>
+        </div>
+        <h2>Ranch Rockstage</h2>
+      </article>
+    </section>
+    <div class="section-darkred">
+      <section id="feedback">
+        <form>
+          <div class="name">
+            <input type="text" name="firstname" placeholder="First name"><input type="text" name="lastname" placeholder="Last name">
+          </div>  
+          <input type="text" name="email" placeholder="Email address">
+          <textarea name="comment" placeholder="Please leave a comment!"></textarea>
+          <button>Submit</button>
+        </form>
+        
+        <h1>Give us your feedback!</h1>
+      </section>
+    </div>
+
+    <div class="section-yellow">
+    <footer>
+      <ul>
+        <li>
+          <h3><a href="index.html">MOOSIC</a></h3>
+        </li>
+        <li><a href="#tours">Tours</a></li>
+        <li><a href="#music">Listen</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+        <li><p><small>&copy; Moosic. 2022.</small></p></li>
+      </ul>
+    </footer>
+  </div>
+  </body>
+</html>
+<script type="module" src="player.js"></script>
+<script type="module" src="app.js"></script>

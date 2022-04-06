@@ -1,0 +1,16 @@
+{
+  "name": "moosic",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "A web page for a band called Moosic!",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Nathaniel Holmes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "soundcloud": "^3.3.2"
+  }
+}
