@@ -162,7 +162,9 @@ nav li:first-child {
   color: var(--yellow);
 }
 
-
+.filtered{
+  font-family: var(--cursive);
+}
 /* Music Section */
 #music {
   margin: 0;
@@ -474,13 +476,14 @@ nav li:first-child {
     flex-flow: row wrap;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 0;
+    gap: 4rem;
 
   }
   #feedback  h1{
     order: 2;
   }
   #feedback form {
+    order: 1;
     flex-basis: 36%;
   }
 }

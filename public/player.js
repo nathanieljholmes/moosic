@@ -15,7 +15,6 @@ const timeProgress = document.querySelectorAll("#time-progress p")
 const playlist = document.querySelectorAll("#playlist li a")
 
 
-
 // Player Initialization //
 let minutes = "0";
 let seconds = "00";
@@ -171,6 +170,7 @@ player.addEventListener("ended", ()=>{
     player.src = refList[activeSample]
     player.play();
 })
+
 
 // Playlist Selection //
 
